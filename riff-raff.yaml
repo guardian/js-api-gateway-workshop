@@ -1,0 +1,17 @@
+stacks: [playground]
+regions: [eu-west-1]
+templates:
+  js-api-gateway-workshop:
+    type: aws-lambda
+    app: js-api-gateway-workshop
+    contentDirectory:   js-api-gateway-workshop
+    parameters:
+      bucket: gu-jr-microservice-workshop-dist
+      functionNames: [js-api-gateway-workshop-]
+      fileName:  js-api-gateway-workshop.zip
+      prefixStack: false
+
+  deployments:
+    js-api-gateway-workshop-upload:
+      template: js-api-gateway-workshop
+      actions: [uploadLambda]
