@@ -11,7 +11,7 @@ templates:
       fileName:  js-api-gateway-workshop.zip
       prefixStack: false
 
-  deployments:
-    js-api-gateway-workshop-upload:
-      template: js-api-gateway-workshop
-      actions: [uploadLambda]
+deployments:
+  js-api-gateway-workshop-upload:
+    template: js-api-gateway-workshop
+    actions: [uploadLambda]
