@@ -16,16 +16,16 @@ deployments:
     template: js-api-gateway-workshop
     actions: [uploadLambda]
 
-  js-api-gateway-workshop-upload-cfn:
+  js-api-gateway-workshop-cfn:
     type: cloud-formation
-    app: js-api-gateway-workshop-upload
+    app: js-api-gateway-workshop
     parameters:
       prependStackToCloudFormationStackName: false
-      cloudFormationStackName: js-api-gateway-workshop-upload
+      cloudFormationStackName: js-api-gateway-workshop
       templatePath: cfn.yaml
-      dependencies: [js-api-gateway-workshop-upload-upload]
+      dependencies: [js-api-gateway-workshop-upload]
 
-  js-api-gateway-workshop-upload-lambda-update:
-    template: js-api-gateway-workshop-upload
+  js-api-gateway-workshop-lambda-update:
+    template: js-api-gateway-workshop
     actions: [updateLambda]
-    dependencies: [js-api-gateway-workshop-upload-cfn]
+    dependencies: [js-api-gateway-workshop-cfn]
