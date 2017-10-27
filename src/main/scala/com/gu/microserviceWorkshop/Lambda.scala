@@ -4,5 +4,6 @@ object Lambda {
 
   def handler(): String = {
     "hello world"
+    "test branch"
   }
 }
